@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Books"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="100 könyv" Height="450" Width="800">
     <Grid>
-
+        <Grid x:Name="grd_Title" Background="#FFE8E8E8" Height="50" VerticalAlignment="Top">
+            <Label x:Name="lbl_Title" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" ClipToBounds="True">Minden idők 100 legjobb könyve.</Label>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Height="387" Width="800" VerticalAlignment="Bottom">
+            <Grid x:Name="grd_list" Width="300" Background="#FFEAD8C2">
+                <Label x:Name="lbl_listtitle" Height="30" FontSize="15" FontWeight="bold" Margin="0,0,0,354">Könyv listázó:</Label>
+                <Label x:Name="lbl_language" Height="30" Width="120" FontSize="15" Margin="0,0,180,300">A könyv nyelve:</Label>
+                <ComboBox x:Name="cb_language" Height="25" Width="150" Margin="75,0,0,295"></ComboBox>
+                <ListBox x:Name="lv_books" Height="320" Margin="0 64,0,0" Background="{x:Null}"></ListBox>
+            </Grid>
+            <Grid x:Name="grd_details" Width="250" Height="383" >
+                <Label x:Name="lbl_author" Width="250" Height="50" FontSize="15" Margin="0,0,0,354">
+                    <Bold>Szerző:</Bold>
+                </Label>
+                <Label x:Name="lbl_title" Width="250" Height="50" FontSize="15" Margin="0,0,0,229">
+                    <Bold>Könyv címe:</Bold>
+                </Label>
+            </Grid>
+            <Grid x:Name="grd_cover" Width="250" Background="#FFEAD8C2"/>
+        </StackPanel>
     </Grid>
 </Window>
