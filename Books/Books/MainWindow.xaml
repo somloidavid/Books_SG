@@ -10,12 +10,12 @@
         <Grid x:Name="grd_Title" Background="#FFE8E8E8" Height="50" VerticalAlignment="Top">
             <Label x:Name="lbl_Title" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" ClipToBounds="True">Minden idők 100 legjobb könyve.</Label>
         </Grid>
-        <StackPanel Orientation="Horizontal" Height="387" Width="800" VerticalAlignment="Bottom">
+        <StackPanel Orientation="Horizontal" Height="361" Width="800" VerticalAlignment="Bottom">
             <Grid x:Name="grd_list" Width="300" Background="#FFEAD8C2">
                 <Label x:Name="lbl_listtitle" Height="30" FontSize="15" FontWeight="bold" Margin="0,0,0,354">Könyv listázó:</Label>
-                <Label x:Name="lbl_language" Height="30" Width="120" FontSize="15" Margin="0,0,180,300">A könyv nyelve:</Label>
+                <Label Height="30" Width="120" FontSize="15" Margin="0,0,180,300">A könyv nyelve:</Label>
                 <ComboBox x:Name="cb_language" Height="25" Width="150" Margin="75,0,0,295"></ComboBox>
-                <ListBox x:Name="lv_books" Height="320" Margin="0 64,0,0" Background="{x:Null}"></ListBox>
+                <ListBox x:Name="lv_books" Margin="0 64,0,0" Background="{x:Null}"/>
             </Grid>
             <Grid x:Name="grd_details" Width="250" Height="383" >
                 <Label x:Name="lbl_author" Width="250" Height="50" FontSize="15" Margin="0,0,0,354">
@@ -24,8 +24,24 @@
                 <Label x:Name="lbl_title" Width="250" Height="50" FontSize="15" Margin="0,0,0,229">
                     <Bold>Könyv címe:</Bold>
                 </Label>
+                <Label x:Name="lbl_language" Width="250" Height="50" FontSize="15" Margin="0,0,0,129">
+                    <Bold>Nyelve:</Bold>
+                </Label>
+                <Label x:Name="lbl_country" Width="250" Height="50" FontSize="15" Margin="0,0,0,29">
+                    <Bold>Ország:</Bold>
+                </Label>
+                <Label x:Name="lbl_date" Width="250" Height="50" FontSize="15" Margin="0,71,0,0">
+                    <Bold>Megjelenés éve:</Bold>
+                </Label>
+                <TextBlock Visibility="{Binding isVisible}" Width="250" Height="50" FontSize="15" Margin="0,171,0,0">
+                    <Hyperlink Name="HL_wiki" NavigateUri="{Binding WikipediaLink}"     RequestNavigate="HL_wiki_RequestNavigate">
+                        <Run Text="Wikipedia link"/>
+                    </Hyperlink>
+                </TextBlock>
             </Grid>
-            <Grid x:Name="grd_cover" Width="250" Background="#FFEAD8C2"/>
+            <Grid x:Name="grd_cover" Width="250" Background="#FFEAD8C2">
+                <Image Source="{Binding imageSource}" Width="220" Height="340"></Image>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
